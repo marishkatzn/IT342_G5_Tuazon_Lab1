@@ -17,7 +17,7 @@ const Card = ({ children, className = '', title }) => {
                     fontSize: '2rem',
                     fontWeight: '700',
                     marginBottom: '1.5rem',
-                    background: 'linear-gradient(to right, #4ade80, #22c55e)',
+                    background: 'var(--gradient-sunset)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     textAlign: 'center'

@@ -12,14 +12,14 @@ const LandingPage = () => {
                     <div style={{ flex: '1 1 500px', maxWidth: '600px' }}>
                         <div style={{
                             display: 'inline-block',
-                            padding: '8px 16px',
-                            background: 'rgba(34, 197, 94, 0.1)',
-                            color: '#4ade80',
-                            borderRadius: '20px',
+                            padding: '8px 20px',
+                            background: 'rgba(244, 63, 94, 0.1)',
+                            color: 'var(--primary)',
+                            borderRadius: '50px',
                             fontSize: '0.875rem',
                             fontWeight: '600',
                             marginBottom: '1.5rem',
-                            border: '1px solid rgba(34, 197, 94, 0.2)'
+                            border: '1px solid rgba(244, 63, 94, 0.2)'
                         }}>
                             New: Budget Planning 🚀
                         </div>
@@ -28,7 +28,7 @@ const LandingPage = () => {
                             fontWeight: '800',
                             lineHeight: '1.1',
                             marginBottom: '1.5rem',
-                            color: 'white',
+                            color: 'var(--text-main)',
                             letterSpacing: '-2px'
                         }}>
                             Reach your financial targets
@@ -53,91 +53,120 @@ const LandingPage = () => {
 
                         <div style={{ marginTop: '3rem', display: 'flex', gap: '2rem' }}>
                             <div>
-                                <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'white' }}>75K+</h3>
+                                <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--text-main)' }}>75K+</h3>
                                 <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Active Users</p>
                             </div>
-                            <div style={{ width: '1px', background: 'rgba(255,255,255,0.1)' }}></div>
+                            <div style={{ width: '1px', background: 'rgba(0,0,0,0.1)' }}></div>
                             <div>
-                                <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'white' }}>98%</h3>
+                                <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--text-main)' }}>98%</h3>
                                 <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Satisfaction</p>
                             </div>
                         </div>
                     </div>
 
-                    {/* Right Visual - Abstract Logo Representation */}
+                    {/* Right Visual - 3D Finance Capsule Representation */}
                     <div style={{ flex: '1 1 400px', position: 'relative', height: '500px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                        {/* Background Design Elements */}
+
+                        {/* 1. Main Background Glow */}
                         <div style={{
                             position: 'absolute',
-                            width: '500px',
-                            height: '500px',
-                            background: 'radial-gradient(circle, rgba(34, 197, 94, 0.1) 0%, rgba(15, 23, 42, 0) 70%)',
-                            borderRadius: '50%',
-                            zIndex: 0,
+                            width: '120%',
+                            height: '120%',
+                            top: '-10%',
+                            left: '-10%',
+                            background: 'radial-gradient(circle, rgba(244, 114, 182, 0.4) 0%, rgba(251, 146, 60, 0.2) 50%, transparent 80%)',
+                            filter: 'blur(60px)',
+                            zIndex: 0
                         }}></div>
 
+                        {/* 2. The "Capsule" (Card) */}
+                        <div style={{
+                            position: 'relative',
+                            width: '320px',
+                            height: '420px',
+                            background: 'linear-gradient(135deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.3) 100%)',
+                            backdropFilter: 'blur(20px)',
+                            borderRadius: '40px',
+                            border: '1px solid rgba(255,255,255,0.8)',
+                            boxShadow: '0 25px 50px -12px rgba(244, 63, 94, 0.25), inset 0 0 0 1px rgba(255,255,255,0.5)',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'space-between',
+                            padding: '2rem',
+                            transform: 'rotate(-5deg)',
+                            zIndex: 1
+                        }}>
+                            {/* Inner Content of Capsule */}
+                            <div>
+                                <div style={{
+                                    width: '60px',
+                                    height: '60px',
+                                    background: 'var(--primary)',
+                                    borderRadius: '50%',
+                                    marginBottom: '1rem',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    boxShadow: '0 10px 20px rgba(244, 63, 94, 0.4)'
+                                }}>
+                                    <span style={{ fontSize: '1.5rem', color: 'white' }}>💰</span>
+                                </div>
+                                <h3 style={{ fontSize: '2rem', fontWeight: '800', fontFamily: 'Outfit', color: '#1e293b', lineHeight: '1.1' }}>
+                                    Smart<br />Savings
+                                </h3>
+                            </div>
+
+                            {/* Chart Illustration */}
+                            <div style={{ display: 'flex', alignItems: 'flex-end', gap: '8px', height: '100px' }}>
+                                <div style={{ flex: 1, background: '#fecdd3', borderRadius: '4px', height: '40%' }}></div>
+                                <div style={{ flex: 1, background: '#fda4af', borderRadius: '4px', height: '60%' }}></div>
+                                <div style={{ flex: 1, background: '#fb7185', borderRadius: '4px', height: '30%' }}></div>
+                                <div style={{ flex: 1, background: '#f43f5e', borderRadius: '4px', height: '80%' }}></div>
+                                <div style={{ flex: 1, background: '#e11d48', borderRadius: '4px', height: '100%' }}></div>
+                            </div>
+
+                            {/* Floating Badge */}
+                            <div style={{
+                                position: 'absolute',
+                                top: '20px',
+                                right: '-30px',
+                                background: 'white',
+                                padding: '10px 20px',
+                                borderRadius: '20px',
+                                boxShadow: '0 10px 25px rgba(0,0,0,0.1)',
+                                fontWeight: '700',
+                                color: '#10b981',
+                                transform: 'rotate(5deg)'
+                            }}>
+                                +24% YoY
+                            </div>
+                        </div>
+
+                        {/* 3. Decorative Elements */}
                         <div style={{
                             position: 'absolute',
-                            top: '10%',
-                            right: '10%',
+                            bottom: '50px',
+                            left: '-40px',
                             width: '100px',
                             height: '100px',
-                            border: '2px solid rgba(34, 197, 94, 0.1)',
-                            borderRadius: '50%',
-                            zIndex: 0
-                        }}></div>
-                        <div style={{
-                            position: 'absolute',
-                            bottom: '15%',
-                            left: '15%',
-                            width: '60px',
-                            height: '60px',
-                            background: 'rgba(34, 197, 94, 0.05)',
-                            borderRadius: '50%',
-                            zIndex: 0
-                        }}></div>
-
-                        {/* Logo Construction: Map Pin + Coin */}
-                        <div style={{ position: 'relative', zIndex: 1, transform: 'scale(1.2)' }}>
-                            <svg width="300" height="300" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="pinGradient" x1="100" y1="20" x2="100" y2="180" gradientUnits="userSpaceOnUse">
-                                        <stop stopColor="#334155" />
-                                        <stop offset="1" stopColor="#1e293b" />
-                                    </linearGradient>
-                                    <linearGradient id="coinGradient" x1="100" y1="65" x2="100" y2="115" gradientUnits="userSpaceOnUse">
-                                        <stop stopColor="#22c55e" />
-                                        <stop offset="1" stopColor="#16a34a" />
-                                    </linearGradient>
-                                    <filter id="shadow" x="0" y="0" width="200" height="200" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-                                        <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-                                        <feOffset dy="10" />
-                                        <feGaussianBlur stdDeviation="15" />
-                                        <feColorMatrix type="matrix" values="0 0 0 0 0.133333 0 0 0 0 0.772549 0 0 0 0 0.368627 0 0 0 0.25 0" />
-                                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
-                                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
-                                    </filter>
-                                </defs>
-
-                                {/* Map Pin Shape */}
-                                <path d="M100 180C100 180 160 110 160 80C160 46.8629 133.137 20 100 20C66.8629 20 40 46.8629 40 80C40 110 100 180 100 180Z" fill="url(#pinGradient)" />
-                                <path d="M100 170C100 170 150 108 150 80C150 52.3858 127.614 30 100 30C72.3858 30 50 52.3858 50 80C50 108 100 170 100 170Z" fill="#1e293b" />
-
-                                {/* Inner Circle / Coin */}
-                                <circle cx="100" cy="80" r="35" fill="white" filter="url(#shadow)" />
-                                <circle cx="100" cy="80" r="28" fill="url(#coinGradient)" />
-
-                                {/* Dollar Sign */}
-                                <path d="M100 65V95M92 70H100C104.418 70 108 73.5817 108 78C108 82.4183 104.418 86 100 86H98C93.5817 86 90 89.5817 90 94C90 98.4183 93.5817 102 98 102H108" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
+                            background: 'linear-gradient(135deg, #fb923c 0%, #f43f5e 100%)',
+                            borderRadius: '30px',
+                            zIndex: 2,
+                            boxShadow: '0 20px 30px rgba(249, 115, 22, 0.4)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            transform: 'rotate(10deg)'
+                        }}>
+                            <span style={{ fontSize: '3rem', color: 'white' }}>🚀</span>
                         </div>
+
                     </div>
                 </div>
 
                 {/* Features Section */}
                 <div style={{ marginTop: '8rem', textAlign: 'center' }}>
-                    <h2 style={{ fontSize: '2.5rem', fontWeight: '800', color: 'white', marginBottom: '1rem' }}>Our awesome features</h2>
+                    <h2 style={{ fontSize: '2.5rem', fontWeight: '800', color: 'var(--text-main)', marginBottom: '1rem' }}>Our awesome features</h2>
                     <p style={{ color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto 4rem', lineHeight: '1.6' }}>
                         Connect your accounts and let us handle the heavy lifting. We categorize your spending so you always know where your money goes.
                     </p>
@@ -168,7 +197,7 @@ const LandingPage = () => {
 const FeatureCard = ({ title, description, icon }) => (
     <div className="glass-panel" style={{
         padding: '2.5rem',
-        borderRadius: '24px',
+        borderRadius: '32px',
         textAlign: 'left',
         transition: 'transform 0.3s ease, box-shadow 0.3s ease',
         cursor: 'default',
@@ -177,28 +206,29 @@ const FeatureCard = ({ title, description, icon }) => (
     }}
         onMouseEnter={(e) => {
             e.currentTarget.style.transform = 'translateY(-5px)';
-            e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.3)';
+            e.currentTarget.style.boxShadow = '0 20px 40px rgba(244, 63, 94, 0.15)';
             e.currentTarget.style.borderColor = 'var(--primary)';
         }}
         onMouseLeave={(e) => {
             e.currentTarget.style.transform = 'translateY(0)';
-            e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.05)';
+            e.currentTarget.style.boxShadow = '0 10px 25px -5px rgba(0, 0, 0, 0.05)';
             e.currentTarget.style.borderColor = 'var(--glass-border)';
         }}
     >
         <div style={{
             width: '60px',
             height: '60px',
-            background: 'rgba(34, 197, 94, 0.1)',
-            borderRadius: '20px',
+            background: 'linear-gradient(135deg, #fff1f2 0%, #fce7f3 100%)',
+            borderRadius: '50%',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             fontSize: '1.75rem',
             marginBottom: '1.5rem',
-            color: '#4ade80'
+            color: 'var(--primary)',
+            boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)'
         }}>{icon}</div>
-        <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'white', marginBottom: '1rem' }}>{title}</h3>
+        <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--text-main)', marginBottom: '1rem' }}>{title}</h3>
         <p style={{ color: 'var(--text-muted)', lineHeight: '1.6' }}>{description}</p>
     </div>
 );

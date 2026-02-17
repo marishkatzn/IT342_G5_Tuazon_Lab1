@@ -3,25 +3,25 @@ import React from 'react';
 const Button = ({ children, onClick, type = 'button', className = '', variant = 'primary', size = 'md', disabled = false, style = {} }) => {
 
     const sizes = {
-        sm: { padding: '8px 16px', fontSize: '0.875rem', borderRadius: '8px' },
-        md: { padding: '12px 24px', fontSize: '1rem', borderRadius: '12px' },
-        lg: { padding: '16px 32px', fontSize: '1.125rem', borderRadius: '16px' }
+        sm: { padding: '8px 20px', fontSize: '0.875rem', borderRadius: '50px' },
+        md: { padding: '12px 28px', fontSize: '1rem', borderRadius: '50px' },
+        lg: { padding: '16px 40px', fontSize: '1.125rem', borderRadius: '50px' }
     };
 
     const getVariantStyle = () => {
         switch (variant) {
             case 'secondary':
                 return {
-                    background: 'transparent',
-                    color: 'var(--primary)',
-                    border: '1px solid var(--primary)',
-                    boxShadow: 'none'
+                    background: 'white',
+                    color: 'var(--text-main)',
+                    border: '1px solid #e2e8f0',
+                    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)'
                 };
             case 'tertiary':
                 return {
                     background: 'transparent',
-                    color: 'white',
-                    border: '1px solid white',
+                    color: 'var(--primary)',
+                    border: '1px solid var(--primary)',
                     boxShadow: 'none'
                 };
             case 'ghost':
@@ -35,15 +35,15 @@ const Button = ({ children, onClick, type = 'button', className = '', variant = 
                 return {
                     background: 'linear-gradient(135deg, #ef4444 0%, #ec4899 100%)',
                     color: '#ffffff',
-                    boxShadow: '0 4px 15px rgba(239, 68, 68, 0.3)',
+                    boxShadow: '0 10px 15px -3px rgba(239, 68, 68, 0.2)',
                     border: 'none'
                 };
             case 'primary':
             default:
                 return {
-                    background: 'linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%)',
+                    background: 'var(--gradient-sunset)',
                     color: '#ffffff',
-                    boxShadow: '0 4px 15px rgba(34, 197, 94, 0.3)',
+                    boxShadow: '0 10px 20px -5px rgba(244, 63, 94, 0.3)',
                     border: 'none'
                 };
         }

@@ -17,8 +17,8 @@ const Navbar = () => {
             position: 'sticky',
             top: 0,
             zIndex: 50,
-            background: 'rgba(15, 23, 42, 0.8)',
-            backdropFilter: 'blur(8px)',
+            background: 'rgba(255, 255, 255, 0.8)',
+            backdropFilter: 'blur(12px)',
             borderBottom: '1px solid var(--glass-border)',
             padding: '1rem 0'
         }}>
@@ -29,7 +29,7 @@ const Navbar = () => {
                             width: '32px',
                             height: '32px',
                             background: 'var(--primary)',
-                            borderRadius: '8px',
+                            borderRadius: '50%',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
@@ -49,7 +49,7 @@ const Navbar = () => {
                             width: '32px',
                             height: '32px',
                             background: 'var(--primary)',
-                            borderRadius: '8px',
+                            borderRadius: '50%',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',

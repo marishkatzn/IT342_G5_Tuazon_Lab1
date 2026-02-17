@@ -1,15 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --bg-dark: #0f172a;
-  --bg-card: rgba(30, 41, 59, 0.7);
-  --primary: #22c55e;
-  --primary-hover: #16a34a;
-  --secondary: #10b981;
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-highlight: rgba(255, 255, 255, 0.05);
+  /* Core Colors */
+  --bg-dark: #ffffff;
+  /* Re-purposed as main bg for light theme */
+  --bg-card: #ffffff;
+  --primary: #f43f5e;
+  /* Rose 500 */
+  --primary-hover: #e11d48;
+  /* Rose 600 */
+  --secondary: #fb923c;
+  /* Orange 400 */
+  --text-main: #1e293b;
+  /* Slate 800 */
+  --text-muted: #64748b;
+  /* Slate 500 */
+
+  /* Glass & border */
+  --glass-border: rgba(0, 0, 0, 0.05);
+  --glass-highlight: rgba(255, 255, 255, 0.8);
+
+  /* Gradients */
+  --gradient-warm: linear-gradient(135deg, #fb7185 0%, #d946ef 100%);
+  /* Rose to Fuchsia */
+  --gradient-sunset: linear-gradient(135deg, #fba988 0%, #f43f5e 100%);
+  /* Peach to Rose */
 }
 
 * {
@@ -20,27 +35,54 @@
 
 body {
   font-family: 'Outfit', sans-serif;
-  background-color: var(--bg-dark);
+  background-color: #fff1f2;
+  /* Rose 50 */
   color: var(--text-main);
-  background-image:
-    radial-gradient(circle at 10% 20%, rgba(34, 197, 94, 0.15) 0%, transparent 20%),
-    radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 20%);
+  background: linear-gradient(135deg, #fff1f2 0%, #fff7ed 50%, #fdf4ff 100%);
+  position: relative;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
-/* Glassmorphism Utilities */
+body::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 70%;
+  height: 80%;
+  background: radial-gradient(circle, rgba(244, 63, 94, 0.25) 0%, rgba(217, 70, 239, 0.15) 40%, transparent 70%);
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(80px);
+}
+
+body::after {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  left: -10%;
+  width: 70%;
+  height: 80%;
+  background: radial-gradient(circle, rgba(251, 146, 60, 0.25) 0%, rgba(244, 63, 94, 0.15) 40%, transparent 70%);
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(80px);
+}
+
+/* Glassmorphism Utilities - Updated for Light Theme */
 .glass-panel {
-  background: var(--bg-card);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--glass-border);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
 }
 
 .glass-input {
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid var(--glass-border);
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
   color: var(--text-main);
   transition: all 0.3s ease;
 }
