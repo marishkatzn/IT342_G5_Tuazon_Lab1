@@ -23,25 +23,47 @@ const Navbar = () => {
             padding: '1rem 0'
         }}>
             <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <div style={{
-                        width: '32px',
-                        height: '32px',
-                        background: 'var(--primary)',
-                        borderRadius: '8px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontSize: '18px',
-                        fontWeight: 'bold',
-                        color: 'white'
-                    }}>
-                        M
+                {user ? (
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'default' }}>
+                        <div style={{
+                            width: '32px',
+                            height: '32px',
+                            background: 'var(--primary)',
+                            borderRadius: '8px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            fontSize: '18px',
+                            fontWeight: 'bold',
+                            color: 'white'
+                        }}>
+                            M
+                        </div>
+                        <span style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--text-main)', letterSpacing: '-0.5px' }}>
+                            MoneyMap
+                        </span>
                     </div>
-                    <span style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--text-main)', letterSpacing: '-0.5px' }}>
-                        MoneyMap
-                    </span>
-                </Link>
+                ) : (
+                    <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <div style={{
+                            width: '32px',
+                            height: '32px',
+                            background: 'var(--primary)',
+                            borderRadius: '8px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            fontSize: '18px',
+                            fontWeight: 'bold',
+                            color: 'white'
+                        }}>
+                            M
+                        </div>
+                        <span style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--text-main)', letterSpacing: '-0.5px' }}>
+                            MoneyMap
+                        </span>
+                    </Link>
+                )}
 
                 <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
                     {user ? (
