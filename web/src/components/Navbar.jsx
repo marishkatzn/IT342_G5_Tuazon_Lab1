@@ -17,9 +17,9 @@ const Navbar = () => {
             position: 'sticky',
             top: 0,
             zIndex: 50,
-            backdropFilter: 'blur(16px)',
-            background: 'rgba(15, 23, 42, 0.6)',
-            borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
+            background: 'rgba(15, 23, 42, 0.8)',
+            backdropFilter: 'blur(8px)',
+            borderBottom: '1px solid var(--glass-border)',
             padding: '1rem 0'
         }}>
             <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -27,7 +27,7 @@ const Navbar = () => {
                     <div style={{
                         width: '32px',
                         height: '32px',
-                        background: 'linear-gradient(135deg, #6366f1, #ec4899)',
+                        background: 'var(--primary)',
                         borderRadius: '8px',
                         display: 'flex',
                         alignItems: 'center',
@@ -38,7 +38,7 @@ const Navbar = () => {
                     }}>
                         M
                     </div>
-                    <span style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'white', letterSpacing: '-0.5px' }}>
+                    <span style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--text-main)', letterSpacing: '-0.5px' }}>
                         MoneyMap
                     </span>
                 </Link>
@@ -47,22 +47,26 @@ const Navbar = () => {
                     {user ? (
                         <>
                             <span style={{ color: '#94a3b8', marginRight: '8px' }}>
-                                Hi, <span style={{ color: 'white' }}>{user.name}</span>
+                                Hi, <span style={{ color: 'var(--text-main)' }}>{user.name}</span>
                             </span>
-                            <Button variant="secondary" onClick={handleLogout} style={{ padding: '8px 16px', fontSize: '0.9rem' }}>
+                            <Button variant="secondary" onClick={handleLogout} size="sm">
                                 Logout
                             </Button>
                         </>
                     ) : (
                         <>
-                            <Link to="/login" style={{ textDecoration: 'none', color: '#94a3b8', transition: 'color 0.2s' }}>
-                                Login
-                            </Link>
-                            <Link to="/register">
-                                <Button variant="primary" style={{ padding: '8px 20px', fontSize: '0.9rem' }}>
-                                    Get Started
+                            <Link to="/login">
+                                <Button variant="primary" size="md">
+                                    Login
                                 </Button>
                             </Link>
+
+                            <Link to="/register">
+                                <Button variant="tertiary" size="md">
+                                    Sign Up
+                                </Button>
+                            </Link>
+
                         </>
                     )}
                 </div>

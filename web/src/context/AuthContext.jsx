@@ -56,11 +56,8 @@ export const AuthProvider = ({ children }) => {
             });
 
             if (response.ok) {
-                // After register, we can automatically login or ask user to login.
-                // For smoother UX, let's auto-login by setting user state if backend returns the user.
-                const userData = await response.json();
-                setUser(userData);
-                localStorage.setItem('user', JSON.stringify(userData));
+                // Return true to indicate success, but do NOT log the user in automatically.
+                // The component calling this (Register.jsx) should redirect to /login.
                 return true;
             } else {
                 console.error('Registration failed');

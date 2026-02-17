@@ -43,13 +43,13 @@ const Login = () => {
                             onChange={(e) => setPassword(e.target.value)}
                             required
                         />
-                        <Button type="submit" style={{ width: '100%', marginTop: '1rem' }}>
+                        <Button type="submit" size="lg" style={{ width: '100%', marginTop: '1rem' }}>
                             Sign In
                         </Button>
                     </form>
                     <div style={{ marginTop: '1.5rem', textAlign: 'center', color: '#94a3b8' }}>
                         Don't have an account?{' '}
-                        <Link to="/register" style={{ color: '#6366f1', fontWeight: '600', textDecoration: 'none' }}>
+                        <Link to="/register" style={{ color: 'var(--primary)', fontWeight: '600', textDecoration: 'none' }}>
                             Sign Up
                         </Link>
                     </div>

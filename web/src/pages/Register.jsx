@@ -17,7 +17,7 @@ const Register = () => {
         e.preventDefault();
         const success = await register(name, email, password);
         if (success) {
-            navigate('/dashboard');
+            navigate('/login');
         } else {
             alert('Registration failed');
         }
@@ -52,13 +52,13 @@ const Register = () => {
                             onChange={(e) => setPassword(e.target.value)}
                             required
                         />
-                        <Button type="submit" style={{ width: '100%', marginTop: '1rem' }}>
+                        <Button type="submit" size="lg" style={{ width: '100%', marginTop: '1rem' }}>
                             Create Account
                         </Button>
                     </form>
                     <div style={{ marginTop: '1.5rem', textAlign: 'center', color: '#94a3b8' }}>
                         Already have an account?{' '}
-                        <Link to="/login" style={{ color: '#6366f1', fontWeight: '600', textDecoration: 'none' }}>
+                        <Link to="/login" style={{ color: 'var(--primary)', fontWeight: '600', textDecoration: 'none' }}>
                             Sign In
                         </Link>
                     </div>

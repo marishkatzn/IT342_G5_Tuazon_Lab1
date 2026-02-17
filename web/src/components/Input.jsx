@@ -29,6 +29,9 @@ const Input = ({ label, type, placeholder, value, onChange, name, required = fal
                     padding: '12px 16px',
                     borderRadius: '10px',
                     fontSize: '1rem',
+                    border: '1px solid var(--glass-border)',
+                    background: 'rgba(15, 23, 42, 0.6)',
+                    color: 'var(--text-main)'
                 }}
             />
         </div>
