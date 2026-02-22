@@ -25,20 +25,20 @@ const Login = () => {
     return (
         <Layout>
             <div className="flex-center" style={{ minHeight: '60vh' }}>
-                <Card title="Welcome Back">
+                <Card title="Welcome Back!">
                     <form onSubmit={handleSubmit}>
                         <Input
-                            label="Email Address"
+                           
                             type="email"
-                            placeholder="you@example.com"
+                            placeholder="Enter Email Address"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
                         />
                         <Input
-                            label="Password"
+                            
                             type="password"
-                            placeholder="••••••••"
+                            placeholder="Enter Password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required

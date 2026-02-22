@@ -29,25 +29,25 @@ const Register = () => {
                 <Card title="Create Account">
                     <form onSubmit={handleSubmit}>
                         <Input
-                            label="Full Name"
+                            
                             type="text"
-                            placeholder="John Doe"
+                            placeholder="Enter Full Name"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             required
                         />
                         <Input
-                            label="Email Address"
+                            
                             type="email"
-                            placeholder="you@example.com"
+                            placeholder="Enter Email Address"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
                         />
                         <Input
-                            label="Password"
+                           
                             type="password"
-                            placeholder="••••••••"
+                            placeholder="Enter Password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
