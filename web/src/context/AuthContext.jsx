@@ -10,11 +10,7 @@ export const AuthProvider = ({ children }) => {
     const API_URL = 'http://localhost:8081/api/auth';
 
     useEffect(() => {
-        // Check for existing session (e.g., in localStorage)
-        const storedUser = localStorage.getItem('user');
-        if (storedUser) {
-            setUser(JSON.parse(storedUser));
-        }
+        // Session persistence disabled as per requirement: always start logged out.
         setLoading(false);
     }, []);
 
@@ -32,7 +28,6 @@ export const AuthProvider = ({ children }) => {
             if (response.ok) {
                 const userData = await response.json();
                 setUser(userData);
-                localStorage.setItem('user', JSON.stringify(userData));
                 return true;
             } else {
                 console.error('Login failed');
@@ -71,7 +66,6 @@ export const AuthProvider = ({ children }) => {
 
     const logout = () => {
         setUser(null);
-        localStorage.removeItem('user');
     };
 
     return (
